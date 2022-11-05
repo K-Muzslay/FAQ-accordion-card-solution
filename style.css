@@ -71,6 +71,7 @@ main {
   padding: 1rem;
   width: 85%;
   margin-bottom: 1rem;
+  box-shadow: 0 10px 40px -15px var(--clr-text-dark);
 }
 .hero-images {
   width: 100%;
