@@ -1,0 +1,185 @@
+:root {
+  --clr-bggrad-violet: hsl(273, 75%, 66%);
+  --clr-bggrad-blue: hsl(240, 73%, 65%);
+  --clr-text-dark: hsl(238, 29%, 16%);
+  --clr-text-red: hsl(14, 88%, 65%);
+  --clr-divider: hsl(240, 5%, 91%);
+  --ff-kumbh: 'Kumbh Sans', sans-serif;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+body {
+  font-family: var(--ff-kumbh);
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--clr-text-dark);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--clr-bggrad-violet), var(--clr-bggrad-blue));
+}
+main {
+  position: relative;
+  background: url(images/bg-pattern-mobile.svg) no-repeat top center;
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 85%;
+  margin-bottom: 1rem;
+}
+.hero-images {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+.hero {
+  position: absolute;
+  top: -7rem;
+  width: min(80%, 255px);
+}
+.box {
+  display: none;
+}
+.accordion-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+h1 {
+  font-weight: 700;
+}
+.accordion {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+details {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  padding: 1rem 0;
+  font-size: max(0.8rem, 1.5vh);
+  border-bottom: 1px solid var(--clr-divider);
+}
+details > summary {
+  min-width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary:hover {
+  color: var(--clr-text-red);
+  cursor: pointer;
+}
+details[open] > summary {
+  color: var(--clr-text-dark);
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+details[open] > summary img {
+  transform: rotate(180deg);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: white;
+  text-decoration: none;
+}
+.attribution a:hover {
+  color: var(--clr-text-red);
+}
+
+@media (min-width: 900px) {
+  main {
+    position: relative;
+    width: 870px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-image: unset;
+    background-color: white;
+    padding: 0;
+  }
+  .hero-images {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-image: url(images/illustration-woman-online-desktop.svg),
+      url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 90%, 120%;
+    background-position: -4.8rem 5rem, -12rem -2rem;
+    margin: unset;
+  }
+  .box {
+    width: 150px;
+    position: absolute;
+    display: unset;
+    bottom: 5rem;
+    left: -5.5rem;
+  }
+  .hero {
+    display: none;
+  }
+  .accordion-container {
+    padding: 2rem;
+  }
+}
